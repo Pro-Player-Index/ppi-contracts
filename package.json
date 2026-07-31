@@ -22,6 +22,7 @@
   ],
   "scripts": {
     "build": "tsup",
+    "prepare": "tsup",
     "typecheck": "tsc --noEmit",
     "clean": "rm -rf dist"
   },
