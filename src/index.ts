@@ -22,3 +22,4 @@ export * from './leaderboard.js';
 export * from './compare.js';
 export * from './profile.js';
 export * from './admin.js';
+export * from './outbox-events.js';
