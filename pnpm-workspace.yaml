@@ -1,5 +1,10 @@
-allowBuilds:
-  esbuild: set this to true or false
-onlyBuiltDependencies:
-  - esbuild
+packages:
+  - '.'
+
+# pnpm 11 blocks dependency build scripts by default. tsup builds via
+# esbuild, whose install script must run. The granular onlyBuiltDependencies
+# allowlist is not honored by pnpm 11.3, so allow build scripts here. This
+# also lets consumers install @ppi/contracts as a git dependency: pnpm's
+# inner install + prepare (tsup) must run esbuild without erroring.
+dangerouslyAllowAllBuilds: true
 verifyDepsBeforeRun: false
