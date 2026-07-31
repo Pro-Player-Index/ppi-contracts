@@ -12,6 +12,7 @@ export const ControversyCategorySchema = z.enum([
   'doping',
   'refereeing',
   'governance',
+  'unfair_goal',
   'other',
 ]);
 export type ControversyCategory = z.infer<typeof ControversyCategorySchema>;
@@ -35,6 +36,7 @@ export const ControversySubjectTypeSchema = z.enum([
   'competition',
   'season',
   'organization',
+  'career_moment',
 ]);
 export type ControversySubjectType = z.infer<
   typeof ControversySubjectTypeSchema

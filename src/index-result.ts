@@ -39,3 +39,22 @@ export const IndexBundleSchema = z.object({
   adjusted: IndexResultSchema,
 });
 export type IndexBundle = z.infer<typeof IndexBundleSchema>;
+
+/**
+ * The PPI v2 headline pair. `ppiCareer` is cumulative and never decreases (the
+ * ratchet); `ppiForm` is the recent-window number that may rise and fall. Both
+ * 0–100. Present on the index response under a v2 weight profile.
+ */
+export const CareerFormSchema = z.object({
+  ppiCareer: z.number(),
+  ppiForm: z.number(),
+  careerRaw: z.number(),
+  formRaw: z.number(),
+  positiveCareerMax: z.number(),
+  penaltyTotal: z.number(),
+  /** Cumulative career goals broken down by type (for the UI goal-type view). */
+  goalBreakdown: z
+    .array(z.object({ type: z.string(), count: z.number() }))
+    .default([]),
+});
+export type CareerForm = z.infer<typeof CareerFormSchema>;

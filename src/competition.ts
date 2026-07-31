@@ -15,6 +15,10 @@ export const CompetitionSchema = z.object({
   scope: CompetitionScopeSchema,
   /** Ranking tier, 1 = top flight. */
   tier: z.number().int().positive(),
+  // E21 enrichment (all optional).
+  logoUrl: z.string().url().nullable().optional(),
+  shortName: z.string().nullable().optional(),
+  foundedYear: z.number().int().nullable().optional(),
 });
 export type Competition = z.infer<typeof CompetitionSchema>;
 
