@@ -11,6 +11,7 @@ export * from './competition.js';
 export * from './team-season.js';
 export * from './lineup.js';
 export * from './match.js';
+export * from './heatmap.js';
 export * from './stat.js';
 export * from './trophy.js';
 export * from './award.js';
