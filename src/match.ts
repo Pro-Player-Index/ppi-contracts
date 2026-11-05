@@ -9,6 +9,11 @@ export const MatchEventSchema = z.object({
   personName: z.string().nullable().optional(),
   minute: z.number().int().nonnegative(),
   type: z.string().min(1),
+  /** Team the event belongs to (for side placement + running score). */
+  organizationId: IdSchema.nullable().optional(),
+  organizationName: z.string().nullable().optional(),
+  /** Optional detail, e.g. "penalty", "header", "Hand of God". */
+  detail: z.string().nullable().optional(),
 });
 export type MatchEvent = z.infer<typeof MatchEventSchema>;
 
