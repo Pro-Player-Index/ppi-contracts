@@ -8,3 +8,5 @@ packages:
 # inner install + prepare (tsup) must run esbuild without erroring.
 dangerouslyAllowAllBuilds: true
 verifyDepsBeforeRun: false
+overrides:
+  esbuild: ^0.28.1
